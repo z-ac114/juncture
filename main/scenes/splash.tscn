@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://532e10rscmdu"]
+
+[ext_resource type="Script" uid="uid://ctpe3tm8fjc7g" path="res://scenes/intro.gd" id="1_10vqf"]
+[ext_resource type="Texture2D" uid="uid://b8b0r4fwusdkf" path="res://assets/images/Juncture.svg" id="2_4rrho"]
+[ext_resource type="FontFile" uid="uid://dxpqrfau1i8uh" path="res://assets/helvetica-255/helvetica-rounded-bold-5871d05ead8de.otf" id="2_5svwm"]
+
+[sub_resource type="Animation" id="Animation_31efs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Juncture:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c8158"]
+resource_name = "splash"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Juncture:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4d6w"]
+_data = {
+&"RESET": SubResource("Animation_31efs"),
+&"splash": SubResource("Animation_c8158")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1838612374]
+script = ExtResource("1_10vqf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1691868333]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2035609763]
+offset_right = 715.0
+offset_bottom = 1279.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1583498709]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.875
+offset_top = 139.5
+offset_right = 166.875
+offset_bottom = 212.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.17247221, 0.5223726, 0.70076185, 1)
+theme_override_fonts/normal_font = ExtResource("2_5svwm")
+theme_override_font_sizes/normal_font_size = 60
+text = "Juncture"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Juncture" type="Sprite2D" parent="CanvasLayer" unique_id=2039883191]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(360, 540)
+scale = Vector2(0.48281252, 0.48281252)
+texture = ExtResource("2_4rrho")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1194221459]
+libraries/ = SubResource("AnimationLibrary_r4d6w")
