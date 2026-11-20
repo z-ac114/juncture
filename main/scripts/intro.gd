@@ -6,6 +6,7 @@ extends Node2D
 
 func _ready() -> void:
 	animation_player.play("splash")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	pass
 
 

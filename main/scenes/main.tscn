@@ -1,3 +1,62 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
+[ext_resource type="Texture2D" uid="uid://bggbxnvn7yui4" path="res://assets/images/_ Settings.svg" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://cyq8n0i2jcf4v" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://bij4e80bh18sr" path="res://assets/images/_ Quit.svg" id="2_tefeu"]
+[ext_resource type="FontFile" uid="uid://r7msh8ogaeqn" path="res://assets/helvetica-255/Helvetica-Bold.ttf" id="4_o6xl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbgi4"]
+
+[sub_resource type="Animation" id="Animation_tipki"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_85g3d"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
+_data = {
+&"RESET": SubResource("Animation_tipki"),
+&"hover": SubResource("Animation_85g3d")
+}
+
 [node name="Node2D" type="Node2D" unique_id=467712550]
+script = ExtResource("1_tbgi4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356327334]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=944192863]
+offset_right = 715.0
+offset_bottom = 1279.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer" unique_id=1612426653]
+offset_left = 33.0
+offset_top = 1056.0
+offset_right = 563.0
+offset_bottom = 1172.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_tefeu")
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer" unique_id=1362471129]
+offset_left = 33.0
+offset_top = 976.0
+offset_right = 563.0
+offset_bottom = 1092.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_0wfyh")
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1556447760]
+offset_left = 28.0
+offset_top = 884.0
+offset_right = 198.0
+offset_bottom = 950.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_o6xl0")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tbgi4")
+text = "| Play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=950121699]
+libraries/ = SubResource("AnimationLibrary_choun")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://532e10rscmdu"]
 
-[ext_resource type="Script" uid="uid://ctpe3tm8fjc7g" path="res://scenes/intro.gd" id="1_10vqf"]
+[ext_resource type="Script" uid="uid://ctpe3tm8fjc7g" path="res://scripts/intro.gd" id="1_4rrho"]
 [ext_resource type="Texture2D" uid="uid://b8b0r4fwusdkf" path="res://assets/images/Juncture.svg" id="2_4rrho"]
 [ext_resource type="FontFile" uid="uid://dxpqrfau1i8uh" path="res://assets/helvetica-255/helvetica-rounded-bold-5871d05ead8de.otf" id="2_5svwm"]
 
@@ -66,13 +66,14 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D" unique_id=1838612374]
-script = ExtResource("1_10vqf")
+script = ExtResource("1_4rrho")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1691868333]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2035609763]
 offset_right = 715.0
 offset_bottom = 1279.0
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1583498709]
 anchors_preset = 8
